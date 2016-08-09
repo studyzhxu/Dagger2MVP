@@ -12,20 +12,13 @@ import javax.inject.Inject;
 public class LoginPresenterCompl implements ILoginPresenter {
 
     private ILoginView loginView ;
-    private int count  ;
     private User user ;
 
     @Inject
-    public LoginPresenterCompl(ILoginView view,int i){
+    public LoginPresenterCompl(ILoginView view){
         loginView = view ;
-        count = i ;
         user = new User("张三","123456") ;
     }
-
-    public int getCount(){
-        return count ;
-    }
-
 
     @Override
     public void clear() {
@@ -45,10 +38,5 @@ public class LoginPresenterCompl implements ILoginPresenter {
         }
 
         loginView.onLoginResult(result,code);
-    }
-
-    @Override
-    public void setProgressBarVisiblity(int visiblity) {
-
     }
 }

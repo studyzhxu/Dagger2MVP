@@ -14,11 +14,9 @@ import dagger.Provides;
 public class MainModule {
 
     private final ILoginView view ;
-    private int count ;
 
-    public MainModule(ILoginView view,int count ){
+    public MainModule(ILoginView view){
         this.view = view ;
-        this.count = count ;
 
         
     }
@@ -28,8 +26,4 @@ public class MainModule {
         return view ;
     }
 
-    @Provides
-    int provideInt(){
-        return count ;
-    }
 }

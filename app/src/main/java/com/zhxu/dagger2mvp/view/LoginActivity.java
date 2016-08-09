@@ -37,7 +37,8 @@ public class LoginActivity extends AppCompatActivity implements ILoginView,View.
         mLogin.setOnClickListener(this);
         mClear.setOnClickListener(this);
 
-        DaggerMainComponent.builder().mainModule(new MainModule(this,6)).build().inject(this);
+
+        DaggerMainComponent.builder().mainModule(new MainModule(this)).build().inject(this);
 
 
     }
@@ -46,7 +47,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginView,View.
     public void onClearText() {
         mName.setText("");
         mPassWord.setText("");
-        Toast.makeText(this,"count："+loginPresenter.getCount(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"clear",Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -61,10 +62,6 @@ public class LoginActivity extends AppCompatActivity implements ILoginView,View.
         }
     }
 
-    @Override
-    public void onSetProgressBarVisibility(int visibility) {
-
-    }
 
     @Override
     public void onClick(View v) {

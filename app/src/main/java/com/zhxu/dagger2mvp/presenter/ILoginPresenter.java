@@ -7,5 +7,4 @@ public interface ILoginPresenter {
 
     public void clear() ;
     public void doLogin(String name, String password) ;
-    public void setProgressBarVisiblity(int visiblity) ;
 }
